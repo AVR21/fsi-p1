@@ -131,6 +131,28 @@ def depth_first_graph_search(problem):
     """Search the deepest nodes in the search tree first. [p 74]"""
     return graph_search(problem, Stack())
 
+def branch_and_bound_graph_search(problem):
+    nodos_visitados = 0;
+    closed = {}
+    start = time.perf_counter()
+    fringe = Stack()
+    fringe.append(Node(problem.initial))
+    while fringe:
+        node = fringe.pop()
+        nodos_visitados += 1
+        if problem.goal_test(node.state):
+            end = time.perf_counter()
+            print("Generados: ", len(fringe) + nodos_visitados)
+            print("Visitados: ", nodos_visitados)
+            print("Costo total: ", Node.path_cost(node))
+            print("Tiempo transcurrido: ", (end - start))
+            return node
+        if node.state not in closed:
+            closed[node.state] = True
+            fringe.extend(node.expand(problem))
+            fringe.sort(key = lambda node: node.path_cost, reverse = True)
+    return None
+
 
 
 # _____________________________________________________________________________
