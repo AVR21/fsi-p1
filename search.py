@@ -133,7 +133,12 @@ def depth_first_graph_search(problem):
 
 def branch_and_bound_graph_search(problem):
     """Search the nodes with lowest path cost first."""
-    return graph_search(problem, BBOrderedList())
+    return graph_search(problem, BBOrderList())
+
+def branch_and_bound_with_subest_graph_search(problem):
+    """Search the nodes with lowest path cost plus subestimation heuristic first."""
+    return graph_search(problem, BBSubestOrderList(problem))
+
 
 
 # _____________________________________________________________________________

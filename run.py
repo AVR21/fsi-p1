@@ -28,6 +28,9 @@ print("DFS:")
 print(search.depth_first_graph_search(ab).path())
 print("Branch & Bound:")
 print(search.branch_and_bound_graph_search(ab).path())
+print("Branch & Bound with Subestimation:")
+print(search.branch_and_bound_with_subest_graph_search(ab).path())
+
 
 print("\n---------------------------------------------\n")
 
@@ -38,6 +41,8 @@ print("DFS:")
 print(search.depth_first_graph_search(oe).path())
 print("Branch & Bound:")
 print(search.branch_and_bound_graph_search(oe).path())
+print("Branch & Bound with Subestimation:")
+print(search.branch_and_bound_with_subest_graph_search(oe).path())
 
 print("\n---------------------------------------------\n")
 
@@ -48,6 +53,8 @@ print("DFS:")
 print(search.depth_first_graph_search(gz).path())
 print("Branch & Bound:")
 print(search.branch_and_bound_graph_search(gz).path())
+print("Branch & Bound with Subestimation:")
+print(search.branch_and_bound_with_subest_graph_search(gz).path())
 
 print("\n---------------------------------------------\n")
 
@@ -58,6 +65,8 @@ print("DFS:")
 print(search.depth_first_graph_search(nd).path())
 print("Branch & Bound:")
 print(search.branch_and_bound_graph_search(nd).path())
+print("Branch & Bound with Subestimation:")
+print(search.branch_and_bound_with_subest_graph_search(nd).path())
 
 print("\n---------------------------------------------\n")
 
@@ -68,3 +77,5 @@ print("DFS:")
 print(search.depth_first_graph_search(mf).path())
 print("Branch & Bound:")
 print(search.branch_and_bound_graph_search(mf).path())
+print("Branch & Bound with Subestimation:")
+print(search.branch_and_bound_with_subest_graph_search(mf).path())
