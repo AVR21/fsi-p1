@@ -2,12 +2,10 @@
 
 import search
 
-
+#Batería de problemas
 
 ab = search.GPSProblem('A', 'B'
                        , search.romania)
-
-#Batería de tests
 
 oe = search.GPSProblem('O','E', 
                        search.romania)
@@ -21,9 +19,33 @@ nd = search.GPSProblem('N','D',
 mf = search.GPSProblem('M','F', 
                        search.romania)
 
-print(search.breadth_first_graph_search(ab).path())
-print(search.depth_first_graph_search(ab).path())
 
-# Result:
-# [<Node B>, <Node P>, <Node R>, <Node S>, <Node A>] : 101 + 97 + 80 + 140 = 418
-# [<Node B>, <Node F>, <Node S>, <Node A>] : 211 + 99 + 140 = 450
+
+print("Test 1: From Arad to Bucharest")
+print("BFS: ", search.breadth_first_graph_search(ab).path())
+print("DFS: ",search.depth_first_graph_search(ab).path())
+
+print("\n---------------------------------------------\n")
+
+print("Test 2: From Oradea to Eforie")
+print(search.breadth_first_graph_search(oe).path())
+print(search.depth_first_graph_search(oe).path())
+
+print("\n---------------------------------------------\n")
+
+print("Test 3: From Giurgiu to Zerind")
+print("BFS: ", search.breadth_first_graph_search(gz).path())
+print("DFS: ",search.depth_first_graph_search(gz).path())
+
+print("\n---------------------------------------------\n")
+
+print("Test 4: From Neamt to Dobreta")
+print(search.breadth_first_graph_search(nd).path())
+print(search.depth_first_graph_search(nd).path())
+
+print("\n---------------------------------------------\n")
+
+print("Test 5: From Mehadia to Fagaras")
+print(search.breadth_first_graph_search(mf).path())
+print(search.depth_first_graph_search(mf).path())
+
