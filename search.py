@@ -7,6 +7,7 @@ functions."""
 
 from utils import *
 import random
+import time
 import sys
 
 
@@ -83,6 +84,9 @@ class Node:
             x = x.parent
         return result
 
+    def path_cost(self):
+        return self.path_cost
+
     def expand(self, problem):
         """Return a list of nodes reachable from this node. [Fig. 3.8]"""
         return [Node(next, self, act,
@@ -97,15 +101,24 @@ def graph_search(problem, fringe):
     """Search through the successors of a problem to find a goal.
     The argument fringe should be an empty queue.
     If two paths reach a state, only use the best one. [Fig. 3.18]"""
+    nodos_visitados = 0;
     closed = {}
+    start = time.perf_counter()
     fringe.append(Node(problem.initial))
     while fringe:
         node = fringe.pop()
+        nodos_visitados += 1
         if problem.goal_test(node.state):
+            end = time.perf_counter()
+            print("Generados: ", len(fringe) + nodos_visitados)
+            print("Visitados: ", nodos_visitados)
+            print("Costo total: ", Node.path_cost(node))
+            print("Tiempo transcurrido: ", (end - start))
             return node
         if node.state not in closed:
             closed[node.state] = True
             fringe.extend(node.expand(problem))
+
     return None
 
 
