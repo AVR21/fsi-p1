@@ -68,4 +68,3 @@ print("DFS:")
 print(search.depth_first_graph_search(mf).path())
 print("Branch & Bound:")
 print(search.branch_and_bound_graph_search(mf).path())
-
